@@ -35,17 +35,23 @@
 <h2>Reviews</h2>
 <% if (user) {%>
 <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" value="Add Review">
+  <div>
+    <label>Review:</label>
+    <input type="textarea" name="review-content" id="review-box">
+  </div>
+  <div>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  <div>
+    <input type="submit" value="Add Review">
+  </div>
 </form>
 <% } %>
 
@@ -67,12 +73,14 @@
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
-            <% if (r.user.equals(user._id)) { %>
-              <td>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">X</button>
-                </form>
-              </td>
+            <% if (user) {%>
+              <% if (r.user.equals(user._id)) { %>
+                <td>
+                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                </td>
+              <% } %>
             <% } %>
           </tr>
         <% }); %>

@@ -1,7 +1,8 @@
 var Game = require('../models/game');
 
 module.exports = {
-  create
+  create,
+  delete: deleteReview,
 };
 
 function create(req, res) {
@@ -17,4 +18,17 @@ function create(req, res) {
       res.redirect(`/games/${game._id}`);
     });
   });
+}
+
+function deleteReview(req, res) {
+  Game.findOne(
+    {'reviews._id': req.params.id, 'reviews.user': req.user._id},
+    function(err, game) {
+      if (!game || err) return res.redirect(`/games/${game._id}`);
+      game.reviews.remove(req.params.id);
+      game.save(function(err) {
+        res.redirect(`/games/${game._id}`);
+      });
+    }
+  );
 }

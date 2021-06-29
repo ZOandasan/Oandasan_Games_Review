@@ -1,6 +1,16 @@
 
 <%- include('./partials/header') %>
 
-<p>Zach Oandasan - Home Page</p>
+
+
+<% if (user) {%>
+
+    <!-- Show All Comments that the user has  -->
+
+<% } else { %>
+    Please Sign in to View your comments
+<% } %>
+
+
 
 <%- include('./partials/footer') %>
