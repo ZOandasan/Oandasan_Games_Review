@@ -37,7 +37,7 @@
 <form id="add-review-form" method="POST" action="/games/<%= game._id %>/reviews">
   <div>
     <label>Review:</label>
-    <input type="textarea" name="review-content" id="review-box">
+    <input type="textarea" name="content" id="review-box">
   </div>
   <div>
     <label>Rating:</label>
@@ -59,10 +59,13 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Date</th>
+          <th></th>
           <th>Review</th>
+          <th></th>
           <th>Rating</th>
-          <th>Delete</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -70,22 +73,31 @@
         <% game.reviews.forEach(function(r) { %>
           <% total += r.rating %>
           <tr>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><%= r.content %></td>
-            <td><%= r.rating %></td>
+            <td>
             <% if (user) {%>
               <% if (r.user.equals(user._id)) { %>
-                <td>
-                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                    <button type="submit">X</button>
-                  </form>
-                </td>
+                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                  <button type="submit">X</button>
+                </form>
               <% } %>
             <% } %>
+            </td>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td></td>
+            <td><%= r.content %></td>
+            <td></td>
+            <td><%= r.rating %></td>
+            <td>
+            <% if (user) {%>
+              <% if (r.user.equals(user._id)) { %>
+                <a href="/reviews/<%= r._id %>/edit">Edit</a>
+              <% } %>
+            <% } %>
+            </td>
           </tr>
         <% }); %>
         <tr>
-          <td colspan="2"></td>
+          <td colspan="5"></td>
           <td><strong><%= (total / game.reviews.length).toFixed(1) %></strong></td>
         </tr>
       </tbody>

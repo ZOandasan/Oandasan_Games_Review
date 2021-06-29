@@ -15,6 +15,7 @@ HTML, CSS, Javascript, Mongoose, Express, Google OAuth
 ### Wireframe:
 
 ### Trello Board:
+https://trello.com/b/SadgzZzc/seir-oandasan-project-2-trello-board
 
 ### Next Steps:
 
