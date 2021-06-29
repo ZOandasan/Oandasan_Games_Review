@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/games" method="POST">
+    <div>
+        <label>Title: </label>
+        <input type="text" name="title">
+    </div>
+    <div>
+        <label>Genre: </label>
+        <select name="genre">
+            <option value="ACT">Action</option>
+            <option value="RPG">Roleplaying</option>
+            <option value="STR">Strategy</option>
+            <option value="SIM">Simulation</option>
+            <option value="S&R">Sports/Racing</option>
+            <option value="ADV">Adventure</option>
+            <option value="CAS" selected>Casual</option>
+        </select>
+    </div>
+    <div>
+        <label>Release Year: </label>
+        <input type="text" name="title" required pattern="[0-9]{4}">
+    </div>
+    <div>
+        <label>Xbox Compatability: </label>
+        <select name="xboxCompatability">
+            <option value="true">Xbox Compatable</option>
+            <option value="false" selected>Not Xbox Compatable</option>
+        </select>
+    </div>
+    <div>
+        <label>Playstation Compatability: </label>
+        <select name="psCompatability">
+            <option value="true">Playstation Compatable</option>
+            <option value="false" selected>Not Playstation Compatable</option>
+        </select>
+    </div>
+    <div>
+        <label>PC Compatability: </label>
+        <select name="pcCompatability">
+            <option value="true">PC Compatable</option>
+            <option value="false" selected>Not PC Compatable</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Game">
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

@@ -1,2 +1,29 @@
 <%- include('../partials/header') %>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Release Year</th>
+            <th>Xbox</th>
+            <th>Playstation</th>
+            <th>PC</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% games.forEach(function(g) { %>
+        <tr>
+            <td><a href="/games/<%= g._id %>"><%= g.title %></a></td>
+            <td><%= g.genre %></td>
+            <td><%= g.releaseYear %></td>
+            <td><%= g.xboxCompatability %></td>
+            <td><%= g.psCompatability %></td>
+            <td><%= g.pcCompatability %></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
 <%- include('../partials/footer') %>
