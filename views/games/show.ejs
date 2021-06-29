@@ -1,4 +1,34 @@
 <%- include('../partials/header') %>
 
+<section id="show-page">
+    <div>Title: <%= game.title %></div>
+    <div>
+        <% if (game.genre === 'ACT') {%>
+            Genre: Action
+        <% } else if (game.genre === 'RPG') {%>
+            Genre: Roleplaying
+        <% } else if (game.genre === 'STR') {%>
+            Genre: Strategy
+        <% } else if (game.genre === 'SIM') {%>
+            Genre: Simulation
+        <% } else if (game.genre === 'S&R') {%>
+            Genre: Sports/Racing
+        <% } else if (game.genre === 'ADV') {%>
+            Genre: Adventure
+        <% } else if (game.genre === 'CAS') {%>
+            Genre: Casual
+        <% }; %>
+    </div>
+    <div>Release Year: <%= game.releaseYear %></div>
+    <% if (game.xboxCompatability === true) {%>
+    <div>Xbox Compatable</div>
+    <% }; %>
+    <% if (game.psCompatability === true) {%>
+    <div>Playstation Compatable</div>
+    <% }; %>
+    <% if (game.pcCompatability === true) {%>
+    <div>PC Compatable</div>
+    <% }; %>    
+</section>
 
 <%- include('../partials/footer') %>

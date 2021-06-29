@@ -4,7 +4,7 @@ module.exports = {
     new: newGame,
     create,
     index,
-    
+    show,
 }
 
 function index(req, res){
@@ -24,7 +24,13 @@ function create(req, res){
     }
     const game = new Game(req.body);
     game.save(function(err){
+        if (err) return console.log(err);
         res.redirect('/games');
-        if (err) return;
     })
+}
+
+function show(req, res) {
+    Game.findById(req.params.id, function(err, game) {        
+        res.render('games/show', { title: 'Game Details', game });
+    });   
 }
