@@ -31,6 +31,6 @@ function create(req, res){
 
 function show(req, res) {
     Game.findById(req.params.id, function(err, game) {        
-        res.render('games/show', { title: 'Game Details', game, review });
+        res.render('games/show', { title: 'Game Details', game });
     });   
 }
