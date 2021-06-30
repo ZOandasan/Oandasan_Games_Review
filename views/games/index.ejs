@@ -21,21 +21,21 @@
             <td><%= g.genre %></td>
             <td><%= g.releaseYear %></td>
             <td>
-                <% if (g.xboxCompatability === true) { %>
+                <% if (g.xboxCompatability) { %>
                     Yes
                 <%} else {%>
                     No
                 <% } %>    
             </td>
             <td>
-                <% if (g.psCompatability === true) { %>
+                <% if (g.psCompatability) { %>
                     Yes
                 <%} else {%>
                     No
                 <% } %> 
             </td>
             <td>
-                <% if (g.pcCompatability === true) { %>
+                <% if (g.pcCompatability) { %>
                     Yes
                 <%} else {%>
                     No
