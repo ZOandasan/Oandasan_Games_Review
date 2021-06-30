@@ -4,6 +4,13 @@
 
 
 <% if (user) {%>
+    <h4>Check Moderation Status</h4>
+    <% if (user.admin === true) { %>
+        <p>Is an Admin</p>
+    <% } else if (user.admin === false) { %>
+        <p>Is not Admin</p>
+    <% } %>
+
     <h2>Your Comments</h2>
     <% games.forEach(function(game) { %>
         <% game.reviews.forEach(function(r) { %>
