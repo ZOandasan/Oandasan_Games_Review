@@ -37,8 +37,8 @@ function edit(req, res){
     {'reviews._id': req.params.id, 'reviews.user': req.user._id},
     function(err, game){
       if (!game || err) return res.redirect(`/games/${game._id}`);
-      console.log(game);
-      res.render('reviews/edit', {title: 'Edit Comment', game});
+      let review = game.reviews.id(req.params.id);
+      res.render('reviews/edit', {title: 'Edit Comment', review });
     }
   )
 }
@@ -50,7 +50,8 @@ function update(req, res) {
 
     const reviewSubdoc = game.reviews.id(req.params.id);
     if (!reviewSubdoc.user.equals(req.user._id)) return res.redirect(`/games/${game._id}`);
-    reviewSubdoc.text = req.body.text;
+    reviewSubdoc.content = req.body.content;
+    reviewSubdoc.rating = req.body.rating;
     game.save(function(err) {
       res.redirect(`/games/${game._id}`);
     });

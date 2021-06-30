@@ -8,7 +8,12 @@ const userSchema = new Schema({
     required: true
   },
   email: String,
-  avatar: String
+  avatar: String,
+  admin: {
+    type: Boolean,
+    default: false,
+    
+  }
 }, {
   timestamps: true
 });

@@ -4,8 +4,50 @@
 
 
 <% if (user) {%>
-
-    <!-- Show All Comments that the user has  -->
+    <h2>Your Comments</h2>
+    <% games.forEach(function(game) { %>
+        <% game.reviews.forEach(function(r) { %>
+            <% if (r.user.equals(user._id)) { %>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Game</th>    
+                            <th></th>
+                            <th>Date</th>
+                            <th></th>
+                            <th>Review</th>
+                            <th></th>
+                            <th>Rating</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                <button type="submit">X</button>
+                              </form>
+                            </td>
+                            <td></td>
+                            <td><a href="/games/<%= game._id %>"><%= game.title %></a></td>
+                            <td></td>
+                            <td><%= r.createdAt.toLocaleDateString() %></td>
+                            <td></td>
+                            <td><%= r.content %></td>
+                            <td></td>
+                            <td><%= r.rating %></td>
+                            <td></td>
+                            <td><a href="/reviews/<%= r._id %>/edit">Edit</a></td>
+                        </tr>
+                    </tbody>
+                
+            <% } %>
+        <% }); %>
+    <% }); %>
 
 <% } else { %>
     Please Sign in to View your comments

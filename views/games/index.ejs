@@ -9,7 +9,8 @@
             <th>Release Year  |</th>
             <th>Xbox Compatable  |</th>
             <th>Playstation Compatable  |</th>
-            <th>PC Compatable</th>
+            <th>PC Compatable  |</th>
+            <th>Reviews</th>
         </tr>
     </thead>
 
@@ -40,6 +41,9 @@
                 <%} else {%>
                     No
                 <% } %> 
+            </td>
+            <td>
+                <%= g.reviews.length %>
             </td>
         </tr>
         <% }); %>
