@@ -27,15 +27,15 @@ const gameSchema = new Schema({
         min: 1977,
         max: 2021,
     },
-    xboxCompatability: {
+    xboxCompatibility: {
         type: Boolean,
         default: false,
     },
-    psCompatability: {
+    psCompatibility: {
         type: Boolean,
         default: false,
     },
-    pcCompatability: {
+    pcCompatibility: {
         type: Boolean,
         default: false,
     },
