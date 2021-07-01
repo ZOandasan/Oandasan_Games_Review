@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<p>Login Page</p>
+
+<form action="/admins/<%= user._id %>?_method=PUT" method="POST">
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

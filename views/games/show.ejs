@@ -66,12 +66,14 @@
           <th></th>
           <th>Rating</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% let total = 0 %>
         <% game.reviews.forEach(function(r) { %>
           <% total += r.rating %>
+          <% if (r.visible === true) { %>
           <tr>
             <td>
             <% if (user) {%>
@@ -94,7 +96,15 @@
               <% } %>
             <% } %>
             </td>
+            <td>
+              <% if (user) {%>
+                <% if (user.admin === true) { %>
+              <!-- Add in Admin Edit Functionality -->
+                <% } %>
+              <% } %>
+            </td>
           </tr>
+          <% } %>
         <% }); %>
         <tr>
           <td colspan="5"></td>

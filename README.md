@@ -6,7 +6,7 @@
 https://oandasan-games-review.herokuapp.com/
 
 ### Technologies Used:
-HTML, CSS, Javascript, Mongoose, Express, Google OAuth
+HTML, CSS, Javascript, Node.js, MongoDB, Mongoose, Express, Google OAuth, Heroku, Github
 
 ### Screenshots:
 

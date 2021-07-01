@@ -9,6 +9,7 @@
         <p>Is an Admin</p>
     <% } else if (user.admin === false) { %>
         <p>Is not Admin</p>
+        <a href="/admins/<%= user._id %>/login">Login Admin</a>
     <% } %>
 
     <h2>Your Comments</h2>

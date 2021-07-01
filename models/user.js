@@ -12,6 +12,10 @@ const userSchema = new Schema({
   admin: {
     type: Boolean,
     default: false,
+  },
+  adminAttempts: {
+    type: Number,
+    default: 0,
   }
 }, {
   timestamps: true
