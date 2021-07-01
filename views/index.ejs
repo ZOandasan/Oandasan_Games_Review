@@ -5,11 +5,10 @@
 
 <% if (user) {%>
     <h4>Check Moderation Status</h4>
-    <% if (user.admin === true) { %>
+    <% if (user.admin) { %>
         <p>Is an Admin</p>
-    <% } else if (user.admin === false) { %>
+    <% } else if (!user.admin) { %>
         <p>Is not Admin</p>
-        <a href="/admins/<%= user._id %>/login">Login Admin</a>
     <% } %>
 
     <h2>Your Comments</h2>

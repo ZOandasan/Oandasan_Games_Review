@@ -11,6 +11,11 @@
             <th>Playstation Compatable  |</th>
             <th>PC Compatable  |</th>
             <th>Reviews</th>
+            <% if (user) {%>
+                <% if (user.admin) { %>
+                    <th></th>
+                <% } %>
+            <% } %>
         </tr>
     </thead>
 
@@ -45,6 +50,16 @@
             <td>
                 <%= g.reviews.length %>
             </td>
+            <% if (user) {%>
+                <% if (user.admin) { %>
+                    <td>
+                        <form action="/games/<%= g.id %>?_method=DELETE" method="POST" class="delete-form">
+                            <button type="submit">X</button>
+                        </form>
+                    </td>
+                <% } %>
+            <% } %>
+
         </tr>
         <% }); %>
     </tbody>
