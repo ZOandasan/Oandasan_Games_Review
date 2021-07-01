@@ -9,6 +9,9 @@ router.post('/games/:id/reviews', isLoggedIn, reviewsCtrl.create);
 router.put('/reviews/:id', isLoggedIn, reviewsCtrl.update);
 router.delete('/reviews/:id', isLoggedIn, reviewsCtrl.delete);
 
+router.get('/reviews/:id/admins/edit', isLoggedIn, reviewsCtrl.editVis)
+router.put('/reviews/:id/admins', isLoggedIn, reviewsCtrl.updateVis);
+
 
 
 module.exports = router;

@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form action="/reviews/<%= review._id %>/admins?_method=PUT" method="POST">
+    <select name="visible">
+        <div>
+            <label>Visibility</label>
+            <% if (review.visible) { %>
+                <option value="true" selected>true</option>
+                <option value="false">false</option>
+            <% } else { %>
+                <option value="true">true</option>
+                <option value="false" selected>false</option>
+            <% } %>
+        </div>
+        <div>
+            <input type="submit" value="Change Visibility">
+        </div>
+    </select>
+</form>
+
+<%- include('../partials/footer') %>
