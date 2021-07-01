@@ -1,0 +1,96 @@
+<%- include('../partials/header') %>
+
+<p>Admin Edit Page</p>
+
+<form id="edit-form" action="/games/<%= game._id %>?_method=PUT" method="POST">
+    <div>
+        <label>Title: </label>
+        <input type="text" name="title" value="<%= game.title %>">
+    </div>
+    <div>
+        <label>Genre: </label>
+        <select name="genre">
+            <% if (game.genre === 'ACT') { %>
+                <option value="ACT" selected>Action</option>
+            <% } else { %>
+                <option value="ACT">Action</option>
+            <% } %>
+            <% if (game.genre === 'RPG') { %>
+                <option value="RPG" selected>Roleplaying</option>
+            <% } else { %>
+                <option value="RPG">Roleplaying</option>
+            <% } %>
+            <%  if (game.genre === 'STR') { %>
+                <option value="STR" selected>Strategy</option>
+            <% } else { %>
+                <option value="STR">Strategy</option>
+            <% } %>
+            <%  if (game.genre === 'SIM') { %>
+                <option value="SIM" selected>Simulation</option>
+            <% } else { %>
+                <option value="SIM">Simulation</option>
+            <% } %>
+            <%  if (game.genre === 'S&R') { %>
+                <option value="S&R" selected>Sports/Racing</option>
+            <% } else { %>
+                <option value="S&R">Sports/Racing</option>
+            <% } %>
+            <%  if (game.genre === 'ADV') { %>
+                <option value="ADV" selected>Adventure</option>
+            <% } else { %>
+                <option value="ADV">Adventure</option>
+            <% } %>
+            <%  if (game.genre === 'CAS') { %>
+                <option value="CAS" selected>Casual</option>
+            <% } else  { %>
+                <option value="CAS">Casual</option>
+            <% } %>
+                
+        </select>
+    </div>
+    <div>
+        <label>Release Year: </label>
+        <input type="text" name="releaseYear" required pattern="[0-9]{4}" value="<%= game.releaseYear %>">
+    </div>
+    <div>
+        <label>Xbox Compatability: </label>
+        <select name="xboxCompatibility">
+            <%  if (game.xboxCompatibility) { %>
+                <option value="true" selected>Xbox Compatable</option>
+                <option value="false">Not Xbox Compatable</option>
+            <% } else  { %>
+                <option value="true">Xbox Compatable</option>
+                <option value="false" selected>Not Xbox Compatable</option>
+            <% } %>
+        </select>
+    </div>
+    <div>
+        <label>Playstation Compatability: </label>
+        <select name="psCompatibility">
+            <%  if (game.psCompatibility) { %>
+                <option value="true" selected>Playstation Compatable</option>
+                <option value="false">Not Playstation Compatable</option>
+            <% } else  { %>
+                <option value="true">Playstation Compatable</option>
+                <option value="false" selected>Not Playstation Compatable</option>
+            <% } %>
+        </select>
+    </div>
+    <div>
+        <label>PC Compatability: </label>
+        <select name="pcCompatibility">
+            <%  if (game.pcCompatibility) { %>
+                <option value="true" selected>PC Compatable</option>
+                <option value="false">Not PC Compatable</option>
+            <% } else  { %>
+                <option value="true">PC Compatable</option>
+                <option value="false" selected>Not PC Compatable</option>
+            <% } %>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Edit Game">
+    </div>
+</form>
+
+<%- include('../partials/footer') %>

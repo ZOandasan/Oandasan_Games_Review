@@ -3,17 +3,22 @@
 <table>
     <thead>
         <tr>
+            <% if (user) {%>
+                <% if (user.admin) { %>
+                    <th>Delete</th>
+                <% } %>
+            <% } %>
             <th>Title  </th>
-            <th>|</th>
-            <th>Genre  |</th>
-            <th>Release Year  |</th>
-            <th>Xbox Compatable  |</th>
-            <th>Playstation Compatable  |</th>
-            <th>PC Compatable  |</th>
+            <th></th>
+            <th>Genre  </th>
+            <th>Release Year</th>
+            <th>Xbox Compatable</th>
+            <th>Playstation Compatable</th>
+            <th>PC Compatable</th>
             <th>Reviews</th>
             <% if (user) {%>
                 <% if (user.admin) { %>
-                    <th></th>
+                    <th>Edit</th>
                 <% } %>
             <% } %>
         </tr>
@@ -22,9 +27,34 @@
     <tbody>
         <% games.forEach(function(g) { %>
         <tr>
+            <% if (user) {%>
+                <% if (user.admin) { %>
+                    <td>
+                        <form action="/games/<%= g.id %>?_method=DELETE" method="POST" class="delete-form">
+                            <button type="submit">X</button>
+                        </form>
+                    </td>
+                <% } %>
+            <% } %>
             <td><a href="/games/<%= g._id %>"><%= g.title %></a></td>
             <td></td>
-            <td><%= g.genre %></td>
+            <td>
+                <% if (g.genre === 'ACT') {%>
+                    Genre: Action
+                <% } else if (g.genre === 'RPG') {%>
+                    Genre: Roleplaying
+                <% } else if (g.genre === 'STR') {%>
+                    Genre: Strategy
+                <% } else if (g.genre === 'SIM') {%>
+                    Genre: Simulation
+                <% } else if (g.genre === 'S&R') {%>
+                    Genre: Sports/Racing
+                <% } else if (g.genre === 'ADV') {%>
+                    Genre: Adventure
+                <% } else if (g.genre === 'CAS') {%>
+                    Genre: Casual
+                <% }; %>
+            </td>
             <td><%= g.releaseYear %></td>
             <td>
                 <% if (g.xboxCompatibility) { %>
@@ -53,13 +83,10 @@
             <% if (user) {%>
                 <% if (user.admin) { %>
                     <td>
-                        <form action="/games/<%= g.id %>?_method=DELETE" method="POST" class="delete-form">
-                            <button type="submit">X</button>
-                        </form>
+                        <a href="/games/<%= g._id %>/edit">Edit</a>
                     </td>
                 <% } %>
             <% } %>
-
         </tr>
         <% }); %>
     </tbody>

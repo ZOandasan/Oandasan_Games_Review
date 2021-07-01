@@ -6,6 +6,8 @@ module.exports = {
     index,
     show,
     delete: gameDelete,
+    edit,
+    update,
 }
 
 function index(req, res){
@@ -40,4 +42,19 @@ function gameDelete(req, res) {
     Game.findOneAndDelete( {_id: req.params.id }, function(err){
         res.redirect('/games');
     })
+}
+
+function edit(req, res) {
+    Game.findOne({_id: req.params.id}, function(err, game) {
+        if (err || !game) return res.redirect('/games');
+        res.render('games/edit', {title: 'Edit Game', game});
+      });
+}
+
+function update(req, res) {
+    Game.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, game) {
+          if (err || !game) return res.redirect('/games');
+          res.redirect('/games');
+        }
+      );
 }
