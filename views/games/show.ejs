@@ -4,19 +4,19 @@
     <div>Title: <%= game.title %></div>
     <div>
         <% if (game.genre === 'ACT') {%>
-            Genre: Action
+            Action
         <% } else if (game.genre === 'RPG') {%>
-            Genre: Roleplaying
+            Roleplaying
         <% } else if (game.genre === 'STR') {%>
-            Genre: Strategy
+            Strategy
         <% } else if (game.genre === 'SIM') {%>
-            Genre: Simulation
+            Simulation
         <% } else if (game.genre === 'S&R') {%>
-            Genre: Sports/Racing
+            Sports/Racing
         <% } else if (game.genre === 'ADV') {%>
-            Genre: Adventure
+            Adventure
         <% } else if (game.genre === 'CAS') {%>
-            Genre: Casual
+            Casual
         <% }; %>
     </div>
     <div>Release Year: <%= game.releaseYear %></div>
