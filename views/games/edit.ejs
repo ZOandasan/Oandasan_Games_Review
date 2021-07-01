@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<p>Admin Edit Page</p>
 
+<main id="full_page_form">
 <form id="edit-form" action="/games/<%= game._id %>?_method=PUT" method="POST">
     <div>
         <label>Title: </label>
@@ -92,5 +92,6 @@
         <input type="submit" value="Edit Game">
     </div>
 </form>
+</main>
 
 <%- include('../partials/footer') %>

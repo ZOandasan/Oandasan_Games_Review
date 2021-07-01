@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
-
+<main id="full_page_form">
 <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
     <div>
         <label>Review:</label>
         <input type="textarea" name="content" id="review-box" value="<%= review.content %>">
-      </div>
+      </div><br>
       <div>
         <label>Rating:</label>
         <select name="rating">
@@ -35,6 +35,7 @@
         <input type="submit" value="Edit Review">
       </div>
 </form>
+</main>
 
 <%- include('../partials/footer') %>
 

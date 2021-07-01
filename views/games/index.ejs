@@ -1,25 +1,23 @@
 <%- include('../partials/header') %>
 
+<main>
 <table>
     <thead>
         <tr>
             <% if (user) {%>
                 <% if (user.admin) { %>
-                    <th>Delete</th>
+                    <th></th>
                 <% } %>
             <% } %>
             <th>Title  </th>
             <th></th>
             <th>Genre  </th>
             <th>Release Year</th>
-            <th>Xbox Compatable</th>
-            <th>Playstation Compatable</th>
-            <th>PC Compatable</th>
             <th>Average Score</th>
             <th>Reviews</th>
             <% if (user) {%>
                 <% if (user.admin) { %>
-                    <th>Edit</th>
+                    <th></th>
                 <% } %>
             <% } %>
         </tr>
@@ -31,54 +29,32 @@
             <% if (user) {%>
                 <% if (user.admin) { %>
                     <td>
-                        <form action="/games/<%= g.id %>?_method=DELETE" method="POST" class="delete-form">
+                        <form action="/games/<%= g.id %>?_method=DELETE" method="POST" class="delete-form" id="delete_button">
                             <button type="submit">X</button>
                         </form>
                     </td>
                 <% } %>
             <% } %>
-            <td><a href="/games/<%= g._id %>"><%= g.title %></a></td>
+            <td id="game_title_link"><a href="/games/<%= g._id %>"><%= g.title %></a></td>
             <td></td>
             <td>
                 <% if (g.genre === 'ACT') {%>
-                    Genre: Action
+                    Action
                 <% } else if (g.genre === 'RPG') {%>
-                    Genre: Roleplaying
+                    Roleplaying
                 <% } else if (g.genre === 'STR') {%>
-                    Genre: Strategy
+                    Strategy
                 <% } else if (g.genre === 'SIM') {%>
-                    Genre: Simulation
+                    Simulation
                 <% } else if (g.genre === 'S&R') {%>
-                    Genre: Sports/Racing
+                    Sports/Racing
                 <% } else if (g.genre === 'ADV') {%>
-                    Genre: Adventure
+                    Adventure
                 <% } else if (g.genre === 'CAS') {%>
-                    Genre: Casual
+                    Casual
                 <% }; %>
             </td>
             <td><%= g.releaseYear %></td>
-            <td>
-                <% if (g.xboxCompatibility) { %>
-                    Yes
-                <%} else {%>
-                    No
-                <% } %>    
-            </td>
-            <td>
-                <% if (g.psCompatibility) { %>
-                    Yes
-                <%} else {%>
-                    No
-                <% } %> 
-            </td>
-            <td>
-                <% if (g.pcCompatibility) { %>
-                    Yes
-                <%} else {%>
-                    No
-                <% } %> 
-            </td>
-            
                 <td>
                     <% if (g.reviews.length) { %> 
                         <% let total = 0 %>
@@ -105,5 +81,6 @@
         <% }); %>
     </tbody>
 </table>
+</main>
 
 <%- include('../partials/footer') %>

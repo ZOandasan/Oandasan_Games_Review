@@ -4,18 +4,22 @@
 
 :root {
   --accent-yellow: rgba(243, 230, 49, 1);
-  --accent-blue: rgba(0, 0, 100, .8);
-  --accent-light-yellow: rgba(243, 230, 49, .3);
+  --accent-blue: rgba(0, 0, 100, 1);
+  --accent-light-yellow: rgb(255, 251, 189);
   --accent-light-blue: #00B7FF;
 }
 
 body {
+  background-color: var(--accent-blue);
   display: grid;
   gap: 1px;
-  grid-template-rows: 10vh 10vh 5vh 5vh 5vh;
   height: 90vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+main {
+  background-color: white;
 }
 
 div {
@@ -26,7 +30,7 @@ div {
 header {
   height: 10vmin;
   font-size: 5vmin;
-  background-color: var(--accent-yellow);
+  background-color: var(--accent-light-yellow);
   justify-content: center;
   align-items: center;
   display: flex;
@@ -34,7 +38,7 @@ header {
 }
 
 nav {
-  background-color: var(--accent-light-yellow);
+  background-color: var(--accent-yellow);
   height: 8vmin;
   font-size: 4vmin;
   justify-content: center;
@@ -42,16 +46,67 @@ nav {
   display: flex;
 }
 
-
 a {
-  color: var(--accent-light-blue);
+  color: var(--accent-blue);
 }
 
 a:hover {
-  color: var(--accent-blue);
+  color: var(--accent-light-blue);
 }
 
 .login img {
   height: 18px;
 }
 
+th {
+  font-size: 2.75vmin;
+  text-align: center;
+}
+
+td {
+  font-size: 2.5vmin;
+  text-align: center;
+  padding: 2px;
+  border: 1px;
+}
+
+#game_title_link {
+  text-align: left;
+}
+
+#review_content {
+  text-align: left;
+}
+
+#full_page_form, footer, form, #form_header {
+  background-color: var(--accent-light-yellow);
+  justify-content: center;
+  align-items: center;
+}
+
+#review-box {
+  height: 50px;
+  width: 600px;
+  padding: 1px;
+  border: 5xp;
+  border-color: Black;
+}
+
+table {
+  width: 85vw;
+}
+
+#header_title {
+  font-size: 5.5vw;
+}
+
+button {
+  border-radius: 30%;
+  color: Black;
+  background-color: Red;
+  font-weight: bold;
+}
+
+#delete_button{
+  background-color: white;
+}

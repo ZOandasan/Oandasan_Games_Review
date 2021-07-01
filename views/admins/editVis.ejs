@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<main id="full_page_form">
 <form action="/reviews/<%= review._id %>/admins?_method=PUT" method="POST">
     <select name="visible">
         <div>
@@ -12,10 +13,11 @@
                 <option value="false" selected>false</option>
             <% } %>
         </div>
-        <div>
-            <input type="submit" value="Change Visibility">
-        </div>
     </select>
+    <div>
+        <input type="submit" value="Change Visibility">
+    </div>
 </form>
+</main>
 
 <%- include('../partials/footer') %>
