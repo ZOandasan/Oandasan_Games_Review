@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<% if (user.adminAttempts < 5) { %>  
 <p>Login Page</p>
 
 <form action="/admins/<%= user._id %>?_method=PUT" method="POST">
@@ -11,5 +12,11 @@
         <input type="submit" value="Login">
     </div>
 </form>
+
+<% } else { %>
+
+<p>Hackers, No Hacking!</p>
+
+<% } %>
 
 <%- include('../partials/footer') %>

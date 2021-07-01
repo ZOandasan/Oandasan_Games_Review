@@ -15,7 +15,7 @@ function edit (req, res){
 function update (req, res){
     let passwordAttempts = req.user.adminAttempts;
     if (req.body.password === process.env.SECRET && passwordAttempts < 5){
-        User.findByIdAndUpdate({_id: req.params.id }, { admin:true, adminAttempts:++passwordAttempts }, { new:true }, function(err, user){
+        User.findByIdAndUpdate({_id: req.params.id }, { admin:true, adminAttempts:0 }, { new:true }, function(err, user){
             res.redirect('/');
         });
     } else {
