@@ -15,6 +15,7 @@
             <th>Xbox Compatable</th>
             <th>Playstation Compatable</th>
             <th>PC Compatable</th>
+            <th>Average Score</th>
             <th>Reviews</th>
             <% if (user) {%>
                 <% if (user.admin) { %>
@@ -77,6 +78,19 @@
                     No
                 <% } %> 
             </td>
+            
+                <td>
+                    <% if (g.reviews.length) { %> 
+                        <% let total = 0 %>
+                        <% g.reviews.forEach(function(r) { %>
+                            <% total += r.rating %>
+                        <% }); %>
+                        <%= (total / g.reviews.length).toFixed(1) %>
+                    <% } else { %>
+                        0
+                    <% } %>    
+                </td>
+            
             <td>
                 <%= g.reviews.length %>
             </td>

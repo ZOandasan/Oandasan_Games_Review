@@ -21,7 +21,7 @@ function newGame(req, res){
 }
 
 function create(req, res){
-    console.log(req.body);
+    req.body.user = req.user._id;
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }

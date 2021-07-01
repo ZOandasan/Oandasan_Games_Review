@@ -26,9 +26,10 @@ const gameSchema = new Schema({
         enum: ['ACT', 'RPG', 'STR', 'SIM', 'S&R', 'ADV', 'CAS'],
         default: 'CAS',
     },
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     releaseYear: {
         type: Number,
-        min: 1977,
+        min: 1900,
         max: 2021,
     },
     xboxCompatibility: {

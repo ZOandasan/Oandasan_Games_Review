@@ -28,7 +28,8 @@
     <% }; %>
     <% if (game.pcCompatibility === true) {%>
     <div>PC Compatible</div>
-    <% }; %>    
+    <% }; %>
+    
 </section>
 
 <br><br>
@@ -60,6 +61,8 @@
       <thead>
         <tr>
           <th></th>
+          <th>Reviewer</th>
+          <th></th>
           <th>Date</th>
           <th></th>
           <th>Review</th>
@@ -84,6 +87,8 @@
               <% } %>
             <% } %>
             </td>
+            <td><%= r.username %></td>
+            <td></td>
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td></td>
             <td><%= r.content %></td>
