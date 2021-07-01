@@ -11,14 +11,17 @@ https://oandasan-games-review.herokuapp.com/
 ### Technologies Used:
 HTML, CSS, Javascript, Node.js, MongoDB, Mongoose, Express, Google OAuth, Heroku, Github
 
-### Screenshots:
-
+### Trello Board:
+https://trello.com/b/SadgzZzc/seir-oandasan-project-2-trello-board
 
 ### ERD:
 <td> <img src="https://imgur.com/a/JhXwQad" width:"450"> </td>
 
-### Trello Board:
-https://trello.com/b/SadgzZzc/seir-oandasan-project-2-trello-board
+### Screenshots:
+<td> <img src="" width:"450"> </td>
+<td> <img src="" width:"450"> </td>
+<td> <img src="" width:"450"> </td>
+<td> <img src="" width:"450"> </td>
 
 ### Next Steps:
 -As a Signed-In-User, I want to be able to add in reactions to other Users reviews.

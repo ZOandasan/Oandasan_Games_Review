@@ -21,6 +21,19 @@
         <% }; %>
     </div>
     <div>Release Year: <%= game.releaseYear %></div>
+    <div>
+      <% if (game.reviews.length) { %> 
+        <% let total = 0 %>
+        <% game.reviews.forEach(function(r) { %>
+          <% total += r.rating %>
+        <% }); %>
+        Average Score: <%= (total / game.reviews.length).toFixed(1) %>
+      <% } else { %>
+          Average Score: -
+      <% } %>  
+    </div>
+
+
     <% if (game.xboxCompatibility === true) {%>
     <div>Xbox Compatible</div>
     <% }; %>
@@ -43,7 +56,7 @@
     <label>Review:</label>
     <input type="textarea" name="content" id="review-box">
   </div>
-  <br>
+  <br><br>
   <div>
     <label>Rating:</label>
     <select name="rating">

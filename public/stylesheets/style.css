@@ -66,6 +66,7 @@ th {
 td {
   font-size: 2.5vmin;
   text-align: center;
+  justify-content: top;
   padding: 2px;
   border: 1px;
 }
