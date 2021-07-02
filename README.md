@@ -15,13 +15,25 @@ HTML, CSS, Javascript, Node.js, MongoDB, Mongoose, Express, Google OAuth, Heroku
 https://trello.com/b/SadgzZzc/seir-oandasan-project-2-trello-board
 
 ### ERD:
-<td> <img src="https://imgur.com/a/JhXwQad" width:"450"> </td>
+<td> <img src="https://i.imgur.com/cLjTLW1.jpg" width:"450"> </td>
 
 ### Screenshots:
-<td> <img src="" width:"450"> </td>
-<td> <img src="" width:"450"> </td>
-<td> <img src="" width:"450"> </td>
-<td> <img src="" width:"450"> </td>
+<td> <img src="https://i.imgur.com/r2jobKD.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/R1i538j.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/1uxHzit.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/7MchnD5.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/6nfsImh.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/gKX3ZwJ.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/K6ku8ZB.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/oinVEJr.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/ILmsQ48.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/ky9z9Tu.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/eKZUX3V.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/LGSdbri.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/r9guQQH.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/xQ4RjWm.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/5h4Ddxy.png" width:"450"> </td>
+<td> <img src="https://i.imgur.com/1Okv3M2.png" width:"450"> </td>
 
 ### Next Steps:
 -As a Signed-In-User, I want to be able to add in reactions to other Users reviews.
