@@ -12,13 +12,13 @@
     <a href="/">HOME</a>
     <p>&nbsp&nbsp | &nbsp&nbsp</p>
     <a href="/games">ALL GAMES</a>
-    <p>&nbsp&nbsp | &nbsp&nbsp</p>
+    <p>&nbsp;&nbsp; | &nbsp;&nbsp;</p>
     <% if (user) { %>
       <a href="/games/new"	<%- title === 'Add Game' ? 'class="active"' : '' %>>ADD GAME</a>
-      <p>&nbsp&nbsp | &nbsp&nbsp</p>
+      <p>&nbsp;&nbsp; | &nbsp;&nbsp;</p>
       <% if (user.admin === false && user.adminAttempts !== 5) { %>
         <a href="/admins/<%= user._id %>/login" id="admin_login">ADMIN LOGIN</a>
-        <p>&nbsp&nbsp | &nbsp&nbsp</p>
+        <p>&nbsp;&nbsp; | &nbsp;&nbsp;</p>
       <% } %>
     <a href="/logout">LOG OUT</a>
     <% } else { %>
