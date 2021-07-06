@@ -61,6 +61,7 @@ function update(req, res) {
 }
 
 function sort(req, res, ) {
+    
     if (req.params.id === 'reviews'){
         Game.find({}, function(err, games) {
             games.sort(function(a, b){
@@ -74,7 +75,9 @@ function sort(req, res, ) {
             });
             res.render('games', {title: 'All Games', games});
         });
-    } else if (req.params.id === 'average') {
+    } 
+    
+    else if (req.params.id === 'average') {
         Game.find({}, function(err, games) {
             games.sort(function(a, b){
                 if (calcAverReviews(a) < calcAverReviews(b)) {
@@ -87,11 +90,15 @@ function sort(req, res, ) {
             });
             res.render('games', {title: 'All Games', games});
         });
-    } else if (req.params.id === 'releaseYear'){
+    } 
+    
+    else if (req.params.id === 'releaseYear'){
         Game.find({}).sort(`-${req.params.id}`).exec(function(err, games) {
             res.render('games', {title: 'All Games', games});
         });
-    } else {
+    } 
+    
+    else {
         Game.find({}).sort(`${req.params.id}`).exec(function(err, games) {
             res.render('games', {title: 'All Games', games});
         });

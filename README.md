@@ -18,10 +18,7 @@ https://trello.com/b/SadgzZzc/seir-oandasan-project-2-trello-board
 <ul>
     <li>As a Signed-In-User, I want to be able to add in reactions to other Users reviews.</li>
     <li>As a User, I want there to be a chat filter, that filters out profanity.</li>
-    <li>As a User, I want to see the all games list ordered by title when I hit the sort by title.</li>
-    <li>As a User, I want to see the all games list ordered by release year when I hit the sort by year.</li>
-    <li>As a User, I want to see the all games list ordered by number of reviews when I hit the sort by reviews.</li>
-    <li>As a User, I want to see the all games list ordered by average review score when I hit the sort by average score.</li>
+    <li>As a User, I want to be able to reverse the sort functions</li>
 </ul>
 
 ### ERD:
