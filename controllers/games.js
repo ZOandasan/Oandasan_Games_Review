@@ -8,6 +8,7 @@ module.exports = {
     delete: gameDelete,
     edit,
     update,
+    sort
 }
 
 function index(req, res){
@@ -57,4 +58,54 @@ function update(req, res) {
           res.redirect('/games');
         }
       );
+}
+
+function sort(req, res, ) {
+    if (req.params.id === 'reviews'){
+        Game.find({}, function(err, games) {
+            games.sort(function(a, b){
+                if (a.reviews.length < b.reviews.length) {
+                    return 1;
+                } else if (a.reviews.length > b.reviews.length) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            res.render('games', {title: 'All Games', games});
+        });
+    } else if (req.params.id === 'average') {
+        Game.find({}, function(err, games) {
+            games.sort(function(a, b){
+                if (calcAverReviews(a) < calcAverReviews(b)) {
+                    return 1;
+                } else if (calcAverReviews(a)> calcAverReviews(b)) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            res.render('games', {title: 'All Games', games});
+        });
+    } else if (req.params.id === 'releaseYear'){
+        Game.find({}).sort(`-${req.params.id}`).exec(function(err, games) {
+            res.render('games', {title: 'All Games', games});
+        });
+    } else {
+        Game.find({}).sort(`${req.params.id}`).exec(function(err, games) {
+            res.render('games', {title: 'All Games', games});
+        });
+    }
+
+    function calcAverReviews(g){
+         if (g.reviews.length) {  
+            let total = 0
+            g.reviews.forEach(function(r) { 
+                total += r.rating
+            });
+            return total/g.reviews.length; 
+        } else {
+            return 0;
+        }    
+    }
 }

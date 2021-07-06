@@ -12,4 +12,6 @@ router.delete('/:id', isLoggedIn, gamesCtrl.delete);
 router.get('/:id/edit', isLoggedIn, gamesCtrl.edit);
 router.put('/:id', isLoggedIn, gamesCtrl.update);
 
+router.get('/sort/:id', gamesCtrl.sort);
+
 module.exports = router;
