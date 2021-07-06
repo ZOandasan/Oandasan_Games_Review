@@ -2,6 +2,7 @@
 
 
 <main>
+<% if (!user.admin) { %>
 <% if (user.adminAttempts < 5) { %>  
 <p>Login Page</p>
 
@@ -19,6 +20,12 @@
 
 <p>Hackers, No Hacking!</p>
 
+<% } %>
+<% } else { %>
+
+<form action="/admins/<%= user._id %>?_method=PUT" method="POST">
+    <input type="submit" value="Log Out">
+</form>
 <% } %>
 
 </main>
